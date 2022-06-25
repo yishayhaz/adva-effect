@@ -1,0 +1,24 @@
+.adva {
+  position: relative;
+  overflow: hidden;
+}
+.adva::before {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+
+  animation: var(--animation);
+}
+
+@keyframes adva {
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
