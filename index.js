@@ -1,25 +1,23 @@
 document
   .querySelectorAll(".adva")
-  .forEach((btn) =>
-    btn.addEventListener("mousedown", (e) => handleMouseMove(e, btn))
-  );
+  .forEach((btn) => btn.addEventListener("mousedown", handleMouseMove));
 
-function handleMouseMove(e, elem) {
-  let posX = e.offsetX;
-  let posY = e.offsetY;
+function handleMouseMove(e) {
+  const { offsetX, offsetY, target } = e;
 
-  if (posX >= 0 && posX <= elem.offsetWidth) {
-    elem.style.setProperty("--x", posX + "px");
+  if (0 <= offsetX <= target.offsetWidth) {
+    target.style.setProperty("--x", offsetX + "px");
   }
-  if (posY >= 0 && posY <= elem.offsetHeight) {
-    elem.style.setProperty("--y", posY + "px");
+  if (0 <= offsetY <= target.offsetHeight) {
+    target.style.setProperty("--y", offsetY + "px");
   }
 
-  elem.style.setProperty("--animation", "adva 500ms ease");
-  elem.addEventListener(
+  target.style.setProperty("--animation", "adva 500ms ease");
+
+  target.addEventListener(
     "animationend",
     () => {
-      elem.style.setProperty("--animation", "");
+      target.style.setProperty("--animation", "");
     },
     { once: true }
   );
