@@ -1,7 +1,5 @@
 (() => {
-  document
-    .querySelectorAll(".adva")
-    .forEach((btn) => btn.addEventListener("mousedown", handleMouseMove));
+  document.addEventListener("mousedown", handleMouseMove);
 
   function handleMouseMove({ offsetX, offsetY, target }) {
     if (!target.matches(".adva")) return;
