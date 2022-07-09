@@ -7,8 +7,8 @@
 
 ### cdn links
 ```html
-<link rel="stylesheet" href="https://unpkg.com/adva-effect@1.0.1/style.css" />
-<script src="https://unpkg.com/adva-effect@1.0.1/index.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/adva-effect@1.0.2/style.css" />
+<script src="https://unpkg.com/adva-effect@1.0.2/index.js"></script>
 ```
 
 or `npm i adva-effect`<br/>
