@@ -1,24 +1,21 @@
-document
-  .querySelectorAll(".adva")
-  .forEach((btn) => btn.addEventListener("mousedown", handleMouseMove));
+(() => {
+  document
+    .querySelectorAll(".adva")
+    .forEach((btn) => btn.addEventListener("mousedown", handleMouseMove));
 
-function handleMouseMove(e) {
-  const { offsetX, offsetY, target } = e;
+  function handleMouseMove({ offsetX, offsetY, target }) {
+    if (!target.matches(".adva")) return;
 
-  if (0 <= offsetX <= target.offsetWidth) {
-    target.style.setProperty("--x", offsetX + "px");
+    target.style.setProperty("--adva-x", offsetX + "px");
+    target.style.setProperty("--adva-y", offsetY + "px");
+    target.style.setProperty("--adva-animation-name", "adva");
+
+    target.addEventListener(
+      "animationend",
+      () => {
+        target.style.setProperty("--adva-animation-name", "");
+      },
+      { once: true }
+    );
   }
-  if (0 <= offsetY <= target.offsetHeight) {
-    target.style.setProperty("--y", offsetY + "px");
-  }
-
-  target.style.setProperty("--animation", "adva 500ms ease");
-
-  target.addEventListener(
-    "animationend",
-    () => {
-      target.style.setProperty("--animation", "");
-    },
-    { once: true }
-  );
-}
+})();

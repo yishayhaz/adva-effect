@@ -5,19 +5,19 @@
 .adva::before {
   content: "";
   position: absolute;
-  top: var(--y);
-  left: var(--x);
+  top: var(--adva-y);
+  left: var(--adva-x);
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #fff;
+  background-color: white;
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(0);
 
-  animation: var(--animation);
+  animation: var(--adva-animation-name) 500ms ease;
 }
 
 @keyframes adva {
-  100% {
+  to {
     transform: translate(-50%, -50%) scale(1);
     opacity: 0;
   }
