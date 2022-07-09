@@ -13,7 +13,7 @@
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(0);
 
-  animation: var(--adva-animation-name) 500ms ease;
+  animation: var(--animation-name-adva) 500ms ease;
 }
 
 @keyframes adva {
